@@ -1,9 +1,9 @@
-
+/*BOTÕES PARA AS AÇÕES DE CADASTRO, NA JANELA MODAL OS BOTÕES SALVAR E CANCELAR*/
 const btnCadastrar = document.querySelector(".btn-cadastrar")
 const btnCancelar = document.querySelector(".btn-cancelar")
 const btnSalvar = document.querySelector(".btn-salvar")
 
-
+/*BOTÃO PARA CHAMAR A JANELA MODAL DE CADASTRO DO CLIENTE*/
 btnCadastrar.addEventListener("click", ()=>{
     let cadastrar = document.querySelector(".modal-active")
 
@@ -11,6 +11,7 @@ btnCadastrar.addEventListener("click", ()=>{
 
 })
 
+/*BOTÃO PARA SALVAR OS DADOS DE CADASTRO DO CLIENTE*/
 btnSalvar.addEventListener("click", ()=>{
     cliente.salvar()
     cliente.fecharAposSalvar()
@@ -19,12 +20,13 @@ btnSalvar.addEventListener("click", ()=>{
     document.querySelector(".btn-salvar").innerText = "Salvar"
 })  
 
-
+/*BOTÃO PARA CANCELAR A AÇÃO DE CADASTRAR*/
 btnCancelar.addEventListener("click", ()=>{
 
     let cadastrar = document.querySelector(".modal-active")
     cadastrar.style.display = "none"
 
+    /*LIMPA OS CAMPOS DE PREENCHIMENTO APOS CANCELAR/FECHAR A JANELA*/
     cliente.limparcampos()    
 })
 
@@ -76,22 +78,19 @@ class Clientes{
         
     }
 
+    /*MÉTODO PARA SALVAR OS DADOS DO CLIENTE*/
     salvar(){
         let cliente = this.lerDados()
-
-        
+/*SE O CLIENTE ESTIVER COM O ID = NULL SERÁ ADICIONADO UM CLIENTE NOVO, SENÃO: SE O ID EXISTIR ELE ATUALIZA O CADASTRO*/
         if(this.idEditar == null){
             this.adicionar(cliente)
         }else{
             this.atualizar(this.idEditar, cliente)
-        }
-    
-        
+        }   
         this.listarTabela()
-
-        console.log(this.arrayClientes)
     }
 
+    /*ADICIONA O CLIENTE NO FIM DA LISTA DO ARRAY E SOMA O ID*/
     adicionar(cliente){
         this.arrayClientes.push(cliente)
         this.id++   
@@ -109,9 +108,9 @@ class Clientes{
         return cliente
     }    
 
-    /*CAMPO DE AÇÃO */
+    /*LIXEIRA PARA EXCLUIR: AO CLICAR BUSCA O ITEM POR ID, PERGUNTA SE É O ID QUE DESEJA EXCLUIR E
+    PERCORRE O ARRAY PARA EXCLUÍ-LO NO ARRAY E NA TELA*/
     excluir(id){
-
         if(confirm("Deseja realmente deletar este cliente? " + id)){
         let dadosClientes = document.getElementById("dadosClientes")
 
@@ -122,10 +121,11 @@ class Clientes{
             }
         }
     }
-        console.log(dadosClientes)
-        
+     
     }
 
+    /*IMG PARA EDITAR: APÓS SELECIONAR O CLIENTE QUE DESEJA ATUALIZAR ELA PERCORRE TODOS OS DADOS DO CLIENTE E MOSTRA NA TELA,
+     APÓS ALTERAR E ATUALIZADO NA TELA E NO ARRAY*/
     atualizar(id, cliente){
         for(let i = 0; i < this.arrayClientes.length; i++){
             if(this.arrayClientes[i].id == id){
