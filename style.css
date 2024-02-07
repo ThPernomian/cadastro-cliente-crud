@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(228, 240, 255);
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    width: 100vw;
+}
+
+main{
+    background-color:  rgb(228, 240, 255);
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 90vw;
+    padding: 50px;
+    margin-top: 40px;
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.75);
+}
+main .btn-cadastrar{
+    width: 8rem;
+    background-color:  rgb(0, 227, 227);
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: .3s ease;
+}
+.btn-cadastrar:hover{
+    background-color: aqua;
+}
+table{
+    margin-top: 10px;
+}
+table th{
+    background-color: rgb(0, 227, 227);
+    border-color: white;
+    border-collapse: collapse;
+    height: 32px;
+    border-radius: 4px;
+}
+table th:last-child, table td:last-child{
+    min-width: 100px;
+}
+
+/*MODAL DE CADASTRO, STATUS: HIDDEN, ATÉ SER ATIVADO*/
+.modal-active{
+    background-color: rgb(228, 240, 255);
+    width: 50vw;
+    height: 60vh;
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.75);
+    display: none;
+}
+.titulo{
+    text-align: center;
+    background-color: rgb(0, 227, 227);
+    padding: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 6px 6px 0 0;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 16px;    
+}
+input{
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    width: 340px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+.btn-salvar{
+    background-color:  rgb(0, 255, 0);
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: bold;
+    width: 90px;
+}
+.btn-salvar:hover{
+    background-color: rgb(50, 232, 50);
+}
+.btn-cancelar{
+    background-color: rgb(255, 0, 0);
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: bold;
+    width: 90px;
+}
+.btn-cancelar:hover{
+    background-color: rgba(255, 0, 0, 0.459);
+}
+
+/*CONFIGURAÇÃO DE TAMANHOS DOS ICONES DELETE E EDITAR*/
+.editarDeletar{
+    width: 20px;
+    height: 20Px;   
+    display: inline-flex;
+    margin: 2px 0px 2px 30px;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+/*BOTÕES DE AÇÃO PARA EXCLUIR E EDITAR*/
+.btnExcluir{
+    display: block;
+}
